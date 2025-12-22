@@ -14,15 +14,59 @@ body{
   align-items:center;
   background:linear-gradient(135deg,#170098,#0b2040);
   font-family:Arial, sans-serif;
+  overflow:hidden;
 }
 
+/* 🎈 Balloons */
+.balloon{
+  position:absolute;
+  bottom:-100px;
+  width:40px;
+  height:55px;
+  border-radius:50%;
+  animation:float 9s infinite ease-in;
+  opacity:0.75;
+}
+
+.balloon::after{
+  content:'';
+  position:absolute;
+  width:2px;
+  height:40px;
+  background:white;
+  left:50%;
+  top:55px;
+}
+
+.balloon1{ left:10%; background:#ff6b6b; animation-delay:0s; }
+.balloon2{ left:30%; background:#feca57; animation-delay:2s; }
+.balloon3{ left:60%; background:#54a0ff; animation-delay:4s; }
+.balloon4{ left:80%; background:#5f27cd; animation-delay:1s; }
+
+@keyframes float{
+  0%{ transform:translateY(0); }
+  100%{ transform:translateY(-120vh); }
+}
+
+/* ✨ Stars */
+.star{
+  position:absolute;
+  width:2px;
+  height:2px;
+  background:white;
+  border-radius:50%;
+  opacity:0.8;
+}
+
+/* 🎂 Card */
 .card{
   background:white;
   padding:30px 25px;
   border-radius:18px;
   text-align:center;
   max-width:320px;
-  box-shadow:0 12px 30px rgba(0,0,0,0.15);
+  box-shadow:0 0 30px rgba(255,255,255,0.25);
+  z-index:10;
 }
 
 h1{
@@ -47,40 +91,60 @@ p{
   margin:15px 0;
 }
 
-.footer{
-  margin-top:20px;
-  font-size:13px;
-  color:#888;
+.btn{
+  margin-top:15px;
+  padding:10px 22px;
+  border:none;
+  border-radius:25px;
+  background:#5a2ea6;
+  color:white;
+  font-size:15px;
+  cursor:pointer;
+}
+
+.btn:hover{
+  background:#47208a;
 }
 </style>
 </head>
 
 <body>
 
+<!-- 🎈 Balloons -->
+<div class="balloon balloon1"></div>
+<div class="balloon balloon2"></div>
+<div class="balloon balloon3"></div>
+<div class="balloon balloon4"></div>
+
+<!-- ✨ Stars -->
+<div class="star" style="top:10%; left:20%"></div>
+<div class="star" style="top:30%; left:70%"></div>
+<div class="star" style="top:60%; left:40%"></div>
+<div class="star" style="top:80%; left:80%"></div>
+<div class="star" style="top:50%; left:10%"></div>
+
 <div class="card">
   <h1>Happy Birthday 🎂</h1>
-  <h2>TOPPER🏫📚</h2>
+  <h2>TOPPER 🏫📚</h2>
 
-  <div class="icons">📚 🎸 ⛰️</div>
+  <div class="icons">📚🎸⛰️</div>
 
   <p>
-   Mauj kar, mazee kar 
-   aur mast grow kar
-   <br>Mast vacations enjoy kar<br>
-   
-Enjoy your dayyy TOPPER🏫📚
+    Mauj kar, mazee kar<br>
+    aur mast grow kar 💜<br><br>
+    Enjoy your dayyy TOPPER 🏫📚
   </p>
-  <div class="footer">
-  </div>
+
   <button class="btn" onclick="goPhotos()">
-    ek aur baar click kr 
+    ek aur baar click kar
   </button>
 </div>
-</div>
+
 <script>
 function goPhotos(){
   window.location.href = "page3.html";
 }
 </script>
+
 </body>
 </html>
